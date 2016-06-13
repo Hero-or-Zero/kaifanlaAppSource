@@ -1,0 +1,89 @@
+body{
+    overflow-x: hidden;
+    position: relative;
+    margin-top: 50px;
+    margin-bottom:50px;
+}
+.myView{
+    transition:all .15s linear;
+    position: absolute;
+    width:100%;
+}
+/*即将离开的页面动画开始时的样式*/
+.myView.ng-leave{
+    opacity: 1;
+    left:0;
+}
+/*即将离开的页面动画结束时的样式*/
+.myView.ng-leave.ng-leave-active{
+    opacity:0;
+    left:-100%;
+}
+/*即将进入的页面动画开始时的样式*/
+.myView.ng-enter{
+    opacity: 0;
+    left:100%;
+}
+/*即将进入的页面动画结束时的样式*/
+.myView.ng-enter.ng-enter-active{
+    opacity:1;
+    left:0;
+}
+.red{
+    color:red;
+}
+/****************startStyle******************************/
+.myView{
+
+}
+.start{
+    text-align: center;
+}
+.bigFont{
+    text-align: center;
+    font-size:72px;
+    font-weight:bold;
+}
+/******************mainStyle********************************/
+form{
+    margin-top:20px;
+}
+/*.input-group{*/
+    /*margin-top:20px;*/
+    /*margin-bottom:20px;*/
+/*}*/
+.btnBlock{
+    margin-bottom:50px;
+}
+.navbarFooter:before{
+    display: table;
+    content: '';
+    clear: both;
+}
+.navbarFooter:after{
+    display: table;
+    content: '';
+    clear: both;
+}
+.navbarFooter{
+    margin-top:15px;
+}
+.navbarFooter li:after{
+    display: table;
+    content: '';
+    clear: both;
+}
+.navbarFooter li{
+    float: left;
+    width:33%;
+}
+.navbarFooter li a{
+    margin-left:33%;
+}
+/*****************detailStyle*******************************/
+.mgr{
+    margin-right:10px;
+}
+.mb{
+    margin-bottom:50px;
+}

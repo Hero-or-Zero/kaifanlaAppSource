@@ -1,0 +1,43 @@
+<!--头部导航-->
+<div ng-include="'template/header.html'"></div>
+<div class="container">
+    <!--<div class="input-group">-->
+        <!--<input type="text" class="form-control" placeholder="搜索菜品名称和原料...   ">-->
+        <!--<span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>-->
+    <!--</div>-->
+    <form>
+        <div class="form-group has-feedback">
+            <label class="sr-only" for="kw">搜索关键字</label>
+            <input class="form-control" type="search" ng-model="kw" id="kw" placeholder="搜索菜品名称和原料...   ">
+            <span class="glyphicon glyphicon-search form-control-feedback"></span>
+        </div>
+    </form>
+</div>
+<!--菜品列表组-->
+<div class="container">
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="s in dishList">
+            <div class="media">
+                <div class="media-left">
+                    <a href="#/detail/{{s.did}}"><img ng-src="img/{{s.img_sm}}"></a>
+                </div>
+                <div class="media-body">
+                    <div class="page-header media-heading">
+                        <p><a href="#/detail/{{s.did}}">{{s.name}}</a></p>
+                        <p>主要食料：{{s.material}}</p>
+                    </div>
+                    <div class="red">
+                        ￥{{s.price}}
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+<!--块级按钮“加载更多”-->
+<div class="container btnBlock">
+    <button ng-show="hasMoreData" type="button" class="btn btn-block btn-success" ng-click="loadMore()">加载更多</button>
+    <div ng-hide="hasMoreData" class="alert alert-danger"><span class="glyphicon glyphicon glyphicon-warning-sign"></span>没有更多数据了</div>
+</div>
+<!--底部导航条-->
+<div ng-include="'template/footer.html'"></div>

@@ -1,0 +1,43 @@
+<!--顶部导航-->
+<div ng-include="'template/header.html'"></div>
+
+<br>
+
+<div class="container" ng-show="isConfirm">
+    <div class="panel panel-default" style="padding-left: 20px;padding-right: 20px;">
+        <form>
+            <div class="form-group">
+                <label for="username">联系人：</label>
+                <input ng-model="user_name" type="text" class="form-control" placeholder="请输入姓名" id="username">
+            </div>
+            <div class="form-group">
+                <label>性别:</label>
+                <div>
+                    <input ng-model="male" type="radio" name="userSex" id="male">先生
+                    <input ng-model="female" type="radio" name="userSex" id="female">女士
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="tel">联系电话：</label>
+                <input ng-model="phone" type="text" class="form-control" placeholder="请输入电话号码" id="tel">
+            </div>
+            <div class="form-group">
+                <label for="address">送餐地址：</label>
+                <textarea ng-model="addr" name="address" id="address" cols="10" rows="5" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-block btn-success" ng-click="pay()">确定下单</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="container" ng-hide="isConfirm">
+    <div class="panel panel-default">
+        <div class="alert alert-success">订餐成功！您的订餐编号为：{{menu.oid}}。您可以在用户中心查看订单状态。</div>
+    </div>
+</div>
+
+
+<!--底部导航条-->
+<div ng-include="'template/footer.html'"></div>
+

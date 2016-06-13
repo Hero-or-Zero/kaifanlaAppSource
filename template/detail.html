@@ -1,0 +1,35 @@
+<!--顶部导航-->
+<div ng-include="'template/header.html'"></div>
+
+<br>
+
+<div class="container mb">
+    <!--面包屑导航-->
+    <ol class="breadcrumb">
+        <li><a href="#/main">首页</a></li>
+        <li class="active">详情</li>
+    </ol>
+    <!--详情-->
+    <ul class="list-group">
+        <li class="list-group-item">
+            <div class="page-header">
+                <h4>{{dishDetail.name}}</h4>
+            </div>
+            <img ng-src="img/{{dishDetail.img_lg}}" class="img-responsive">
+            <div class="panel-footer">
+                <div class="page-header">
+                    <p><b>主要原料:</b>{{dishDetail.material}}</p>
+                    <p>{{dishDetail.detail}}</p>
+                </div>
+                <p class="red">￥{{dishDetail.price}}</p>
+            </div>
+        </li>
+        <li class="list-group-item panel-footer clearfix">
+            <a type="button" class="btn btn-warning pull-right" href="#/main">我再看看</a>
+            <a type="button" class="btn btn-success pull-right mgr" href="#/order/{{dishDetail.did}}">我要订餐</a>
+        </li>
+    </ul>
+</div>
+<!--底部导航条-->
+<div ng-include="'template/footer.html'"></div>
+
